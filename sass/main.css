@@ -371,6 +371,7 @@ nav {
   left: 0;
   width: 100vw;
   height: 100vh;
+  min-height: 100%;
   display: flex;
   padding: 15px;
   background-color: rgba(0, 0, 0, 0.2);
