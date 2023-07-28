@@ -1,0 +1,131 @@
+.menu__container {
+    // needs fix animation
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 200;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .25s ease-in-out;
+    // transform: translateY(70px);
+    background-color: getColor('main-bg');
+    padding: 48px 40px 138px 40px;
+    overflow: auto;
+    
+    &.is-open {
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+    }
+    
+    & .menu__button {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+.menu__button {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    &:hover.js-close-menu,
+    &:focus.js-close-menu,
+    &:active.js-close-menu {
+        fill: getColor('main');
+    }
+}
+
+.menu__pages {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 48px;
+    font-family: $mainFontFamily;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.menu__pages__item {
+    margin-bottom: 35px;
+
+    & .menu__pages__link--selected {
+        color: getColor('main');
+    }
+}
+
+.menu__pages__link:hover {
+    color: getColor('main');
+}
+
+.menu__contacts {
+    display: flex;
+    flex-direction: column;
+    font-family: $mainFontFamily;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.menu__contacts__item {
+    margin-bottom: 64px;
+    
+    &:first-child {
+        margin-bottom: 32px;
+    }
+}
+
+.menu__contacts__link {
+    color: getColor('contacts');
+    white-space: nowrap;
+
+    &:visited {
+        color: getColor('contacts');
+    }
+
+    &--highlighted {
+        font-size: 34px;
+        color: getColor('main');
+
+        @media screen and (max-width:380px) {
+            font-size: 28px;
+        }
+    }
+}
+
+.menu__socials {
+    display: flex;
+    align-items: center;
+}
+
+.menu__social__item {
+    &:first-child {
+        padding-right: 10px;
+    }
+
+    &:not(:first-child) {
+        padding: 0 10px;
+        border-left: 1px solid rgba($mainFontColor, 0.2);
+    }
+}
+
+.menu__social__item .menu__social__link {
+    color: getColor('main');
+    font-size: 18px;
+
+    @media screen and (max-width:380px) {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .menu__container, .menu__button {
+        display: none;
+    }
+}

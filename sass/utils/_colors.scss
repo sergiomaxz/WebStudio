@@ -1,0 +1,10 @@
+$colors: (
+    'main': #2196F3,
+    'main-bg': #fff,
+    'border-header': #ececec,
+    'contacts': #757575
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}

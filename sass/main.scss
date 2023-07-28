@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+@import 'utils/variables';
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+
+    &:visited {
+        color: $mainFontColor;
+    }
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@import 'utils/mixins';
+@import 'utils/placeholders';
+@import 'components/header-menu';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/form_hero';
+@import 'components/features';
+@import 'components/team';
+@import 'components/clients';
+@import 'components/footer';
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $mainFontColor;
+    margin-right: calc(-1 * (100vw - 100%));
+    overflow-x: hidden;
+
+    &.modal-open {
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,104 @@
+.features {
+    @include SectionPadding(60px);
+
+    @media screen and (min-width:1200px) {
+        @include SectionPadding(94px);
+    }
+
+    & .container {
+        display: flex;
+        flex-direction: column;
+        gap: 94px;
+    }
+}
+
+.features__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @media screen and (min-width:768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.features__card {
+    @media screen and (min-width:768px) {
+        flex-basis: calc((100% - 30px) / 2);
+    }
+
+    @media screen and (min-width:1200px) {
+        flex-basis: calc((100% - 90px) / 4);
+    }
+}
+
+.features__icon {
+    @include SectionPadding(25px);
+    background-color: $featuresCardBg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.features__title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.features__description {
+    font-size: 14px;
+    font-family: 400;
+    line-height: 24px;
+    color: getColor('contacts');
+}
+
+///////////////
+/// ACTIVITIES
+///////////////
+
+.activity {
+    display: none;
+
+    @media screen and (min-width:1200px) {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+
+.activity__title {
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+}
+
+.activity__list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.activity__card {
+    flex-basis: calc((100% - 30px*2) / 3);
+    position: relative;
+}
+
+.activity__info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: getColor('main-bg');
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    @include SectionPadding(27px);
+    width: 100%;
+    background-color: rgba($footerBg, 0.8);
+}

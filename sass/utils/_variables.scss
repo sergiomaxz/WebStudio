@@ -1,0 +1,19 @@
+$colors: (
+    'main': #2196F3,
+    'main-bg': #fff,
+    'border-header': #ececec,
+    'contacts': #757575,
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}
+
+$mainFontColor: #212121;
+$footerBg: #2F303A;
+$heroBg: #C4C4C4;
+$featuresCardBg: #F5F4FA;
+$black: #000;
+$clientsMainColor: #AFB1B8;
+$mainFontFamily: "Roboto", "Helvetica", "Tahoma", sans-serif;
+$logoFontFamily: "Raleway", sans-serif;
